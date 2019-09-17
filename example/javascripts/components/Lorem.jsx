@@ -113,11 +113,11 @@ function Lorem(props) {
       <h2>{props.title}</h2>
       <p>
         Integer ut laoreet lectus, sit amet bibendum justo. Aenean convallis ac nisi id viverra.
-          Ut eu velit eget dui efficitur facilisis. Sed tincidunt est quis libero congue, vel volutpat magna finibus.
-          Vivamus sodales neque ornare, tempor erat a, congue est. Vestibulum velit orci, rutrum a libero ac,
-          venenatis condimentum velit. Proin nec nunc vel diam accumsan fringilla. Fusce et diam sem.
-          Quisque tincidunt risus eu venenatis ultrices. Mauris vel quam ut erat commodo porta.
-          Quisque a neque at leo placerat porta a et dui.
+        Ut eu velit eget dui efficitur facilisis. Sed tincidunt est quis libero congue, vel volutpat magna finibus.
+        Vivamus sodales neque ornare, tempor erat a, congue est. Vestibulum velit orci, rutrum a libero ac,
+        venenatis condimentum velit. Proin nec nunc vel diam accumsan fringilla. Fusce et diam sem.
+        Quisque tincidunt risus eu venenatis ultrices. Mauris vel quam ut erat commodo porta.
+        Quisque a neque at leo placerat porta a et dui.
       </p>
     </div>
   );

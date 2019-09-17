@@ -5,8 +5,8 @@ import NavLink from './NavLink';
 function constructLinks() {
   return (
     <ul className="navigation">
-      <li><NavLink to="/standard-horizontal">Standard Horizontal</NavLink></li>
-      <li><NavLink to="/standard-vertical">Standard Vertical</NavLink></li>
+      <li><NavLink to="/standard-horizontal">Horizontal</NavLink></li>
+      <li><NavLink to="/standard-vertical">Vertical</NavLink></li>
       <li><NavLink to="/minimal-size">Pane Minimal Size</NavLink></li>
       <li><NavLink to="/percentage">Width in Percentage</NavLink></li>
       <li><NavLink to="/nested">Nested Layout</NavLink></li>
