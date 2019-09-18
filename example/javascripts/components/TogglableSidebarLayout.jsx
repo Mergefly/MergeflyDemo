@@ -6,6 +6,7 @@ export default class TogglableSidebarLayout extends React.Component {
   constructor(props) {
     super(props);
     this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.getSidebarText = this.getSidebarText.bind(this);
     this.state = {
       sidebarVisible: true
     };
@@ -15,6 +16,14 @@ export default class TogglableSidebarLayout extends React.Component {
     this.setState(state => ({ sidebarVisible: !state.sidebarVisible }));
   }
 
+  getSidebarText() {
+    if (this.state.sidebarVisible) {
+      return 'Hide Sidebar';
+    }
+
+    return 'Show Sidebar';
+  }
+
   render() {
     return (
       <SplitterLayout percentage secondaryInitialSize={25}>
@@ -22,8 +31,7 @@ export default class TogglableSidebarLayout extends React.Component {
           <h2>1st Pane</h2>
           <p>This is the 1st pane, and this is the primary pane by default.</p>
           <button type="button" onClick={this.toggleSidebar}>
-            {this.state.sidebarVisible && 'Hide Sidebar'}
-            {!this.state.sidebarVisible && 'Show Sidebar'}
+            {this.getSidebarText}
           </button>
           <pre>
             &lt;SplitterLayout primaryIndex={'{0}'}&gt;{'\n'}
