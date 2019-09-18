@@ -86,6 +86,7 @@ class SplitterLayout extends React.Component {
     let totalSize;
     let splitterSize;
     let offset;
+    
     if (this.props.vertical) {
       totalSize = containerRect.height;
       splitterSize = splitterRect.height;
@@ -95,9 +96,11 @@ class SplitterLayout extends React.Component {
       splitterSize = splitterRect.width;
       offset = clientPosition.left - containerRect.left;
     }
+
     if (offsetMouse) {
       offset -= splitterSize / 2;
     }
+
     if (offset < 0) {
       offset = 0;
     } else if (offset > totalSize - splitterSize) {
@@ -110,7 +113,9 @@ class SplitterLayout extends React.Component {
     } else {
       secondaryPaneSize = totalSize - splitterSize - offset;
     }
+
     let primaryPaneSize = totalSize - splitterSize - secondaryPaneSize;
+
     if (this.props.percentage) {
       secondaryPaneSize = (secondaryPaneSize * 100) / totalSize;
       primaryPaneSize = (primaryPaneSize * 100) / totalSize;
@@ -140,16 +145,17 @@ class SplitterLayout extends React.Component {
   }
 
   handleMouseMove = (e) => {
-    if (this.state.resizing) {
-      const containerRect = this.container.getBoundingClientRect();
-      const splitterRect = this.splitter.getBoundingClientRect();
-      const secondaryPaneSize = this.getSecondaryPaneSize(containerRect, splitterRect, {
-        left: e.clientX,
-        top: e.clientY
-      }, true);
-      clearSelection();
-      this.setState({ secondaryPaneSize });
-    }
+    const containerRect = this.container.getBoundingClientRect();
+    const splitterRect = this.splitter.getBoundingClientRect();
+
+    const secondaryPaneSize = this.getSecondaryPaneSize(containerRect, splitterRect, {
+      left: e.clientX,
+      top: e.clientY
+    }, true);
+
+    clearSelection();
+
+    this.setState({ secondaryPaneSize });
   }
 
   handleTouchMove = (e) => {

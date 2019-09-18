@@ -58,11 +58,6 @@ function Lorem(props) {
       </p>
       <h1>{props.title}</h1>
       <p>
-        Morbi id lacinia lorem. Donec at eros ultrices urna pulvinar lobortis vitae lacinia nisl.
-        Quisque tempus, lorem sit amet luctus molestie, lacus metus ultricies ipsum,
-        sit amet commodo dui lorem eget magna. Suspendisse eget placerat ante, in blandit ante.
-        Suspendisse potenti. Etiam id metus orci. Mauris euismod blandit commodo.
-        Aenean sed aliquam purus, ac pretium enim. Ut at elementum ligula.
         Donec venenatis est in turpis pharetra, ac laoreet diam finibus. Morbi volutpat sit amet magna a facilisis.
         Sed vitae dolor in justo bibendum euismod eget at justo. Praesent faucibus justo quis tristique porta.
         Pellentesque nulla diam, aliquet vel metus nec, commodo malesuada ante.
@@ -83,6 +78,11 @@ function Lorem(props) {
       </p>
       <h1>{props.title}</h1>
       <p>
+        Morbi id lacinia lorem. Donec at eros ultrices urna pulvinar lobortis vitae lacinia nisl.
+        Quisque tempus, lorem sit amet luctus molestie, lacus metus ultricies ipsum,
+        sit amet commodo dui lorem eget magna. Suspendisse eget placerat ante, in blandit ante.
+        Suspendisse potenti. Etiam id metus orci. Mauris euismod blandit commodo.
+        Aenean sed aliquam purus, ac pretium enim. Ut at elementum ligula.
         Vestibulum commodo ante non mi dignissim, et fermentum magna interdum. Suspendisse dui augue,
         porta eget auctor at, auctor at ligula. Aenean accumsan ex turpis, vitae rhoncus felis bibendum in.
         Suspendisse sed justo a massa ullamcorper consectetur sed vitae erat. Proin id magna tellus.
@@ -105,10 +105,11 @@ function Lorem(props) {
       </p>
       <h1>{props.title}</h1>
       <p>
-        Curabitur at consequat nisl. Proin egestas enim vel venenatis sodales.
-        In lorem dui, tristique non eros in, pharetra posuere nisi. Sed non risus bibendum, lacinia nulla posuere,
-        ultrices arcu. Sed tincidunt molestie quam et lobortis. Ut sit amet dolor porta, rutrum quam nec,
-        dapibus velit. Etiam consequat porta leo non dignissim. Praesent et pharetra nunc.
+        Morbi id lacinia lorem. Donec at eros ultrices urna pulvinar lobortis vitae lacinia nisl.
+        Quisque tempus, lorem sit amet luctus molestie, lacus metus ultricies ipsum,
+        sit amet commodo dui lorem eget magna. Suspendisse eget placerat ante, in blandit ante.
+        Suspendisse potenti. Etiam id metus orci. Mauris euismod blandit commodo.
+        Aenean sed aliquam purus, ac pretium enim. Ut at elementum ligula.
       </p>
       <h1>{props.title}</h1>
       <p>
@@ -123,12 +124,12 @@ function Lorem(props) {
   );
 }
 
-Lorem.propTypes = {
-  title: PropTypes.string
-};
-
 Lorem.defaultProps = {
   title: ''
+};
+
+Lorem.propTypes = {
+  title: PropTypes.string
 };
 
 export default Lorem;

@@ -83,6 +83,7 @@ pre {
 
 .my-pane {
   margin: 20px;
+  border-radius: 20px;
 }
 
 .my-iframe {
@@ -105,15 +106,6 @@ pre {
 
 .not-found {
   margin: 20px;
-}
-
-.volatile {
-  transition: background-color 1s, border-color 1s;
-  transition-delay: 500ms;
-  padding: 2px 4px;
-  margin: 0 2px;
-  border: 1px solid white;
-  border-radius: 4px;
 }
 
 .volatile.highlight {
