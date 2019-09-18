@@ -59,7 +59,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
-    "example": "cd example && webpack-dev-server"
+    "example": "cd example && webpack-dev-server",
+    "start": "npm run example"
   },
   "jest": {
     "moduleNameMapper": {
