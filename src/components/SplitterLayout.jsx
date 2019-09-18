@@ -25,11 +25,7 @@ const DEFAULT_SPLITTER_SIZE = 4;
 class SplitterLayout extends React.Component {
   constructor(props) {
     super(props);
-    this.handleResize = this.handleResize.bind(this);
-    this.handleMouseMove = this.handleMouseMove.bind(this);
-    this.handleMouseUp = this.handleMouseUp.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-    this.handleSplitterMouseDown = this.handleSplitterMouseDown.bind(this);
+
     this.state = {
       secondaryPaneSize: 0,
       resizing: false
@@ -86,7 +82,7 @@ class SplitterLayout extends React.Component {
     document.removeEventListener('touchmove', this.handleTouchMove);
   }
 
-  getSecondaryPaneSize(containerRect, splitterRect, clientPosition, offsetMouse) {
+  getSecondaryPaneSize = (containerRect, splitterRect, clientPosition, offsetMouse) => {
     let totalSize;
     let splitterSize;
     let offset;
@@ -131,7 +127,7 @@ class SplitterLayout extends React.Component {
     return secondaryPaneSize;
   }
 
-  handleResize() {
+  handleResize = () => {
     if (this.splitter && !this.props.percentage) {
       const containerRect = this.container.getBoundingClientRect();
       const splitterRect = this.splitter.getBoundingClientRect();
@@ -143,7 +139,7 @@ class SplitterLayout extends React.Component {
     }
   }
 
-  handleMouseMove(e) {
+  handleMouseMove = (e) => {
     if (this.state.resizing) {
       const containerRect = this.container.getBoundingClientRect();
       const splitterRect = this.splitter.getBoundingClientRect();
@@ -156,16 +152,16 @@ class SplitterLayout extends React.Component {
     }
   }
 
-  handleTouchMove(e) {
+  handleTouchMove = (e) => {
     this.handleMouseMove(e.changedTouches[0]);
   }
 
-  handleSplitterMouseDown() {
+  handleSplitterMouseDown = () => {
     clearSelection();
     this.setState({ resizing: true });
   }
 
-  handleMouseUp() {
+  handleMouseUp = () => {
     this.setState(prevState => (prevState.resizing ? { resizing: false } : null));
   }
 
