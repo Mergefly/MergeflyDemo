@@ -1,9 +1,17 @@
 import React from 'react';
 
-export default class Configure extends React.Component {
+class Configure extends React.Component {
     render() {
         return (
-            <div>Configuration File...</div>
+            <div>
+                <div>Configuration File</div>
+                <ul>
+                    <li>See setup.jsx to view more configuration options</li>
+                    <li>Deploy new configuration to server</li>
+                </ul>
+            </div>
         );
     }
 }
+
+export default Configure;
