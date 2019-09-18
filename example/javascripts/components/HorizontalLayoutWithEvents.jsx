@@ -5,9 +5,6 @@ import SplitterLayout from '../../../index';
 export default class HorizontalLayoutWithEvents extends React.Component {
   constructor(props) {
     super(props);
-    this.onDragStart = this.onDragStart.bind(this);
-    this.onDragEnd = this.onDragEnd.bind(this);
-    this.onSecondaryPaneSizeChange = this.onSecondaryPaneSizeChange.bind(this);
     this.state = {
       secondaryPaneSize: -1,
       dragging: false
@@ -33,15 +30,15 @@ export default class HorizontalLayoutWithEvents extends React.Component {
     }
   }
 
-  onDragStart() {
+  onDragStart = () => {
     this.setState({ dragging: true });
   }
 
-  onDragEnd() {
+  onDragEnd = () => {
     this.setState({ dragging: false });
   }
 
-  onSecondaryPaneSizeChange(secondaryPaneSize) {
+  onSecondaryPaneSizeChange = (secondaryPaneSize) => {
     this.setState({ secondaryPaneSize });
   }
 
@@ -53,7 +50,6 @@ export default class HorizontalLayoutWithEvents extends React.Component {
         onSecondaryPaneSizeChange={this.onSecondaryPaneSizeChange}
       >
         <div className="my-pane">
-          <h2>1st Pane</h2>
           <p>This is the 1st pane, and this is the primary pane by default.</p>
           <p>Dragging:
             <span className="volatile" ref={(e) => { this.draggingEl1 = e; }}>
@@ -65,6 +61,7 @@ export default class HorizontalLayoutWithEvents extends React.Component {
               {this.state.secondaryPaneSize}
             </span>
           </p>
+          <h2>1st Pane</h2>
         </div>
         <div className="my-pane">
           <h2>2nd Pane</h2>

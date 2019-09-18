@@ -22,11 +22,12 @@
   width: 4px;
   height: 100%;
   cursor: col-resize;
-  background-color: #ccc;
+  background-color: #45f;
 }
 
 .splitter-layout .layout-splitter:hover {
-  background-color: #bbb;
+  background-color: #45efca;
+  margin: auto;
 }
 
 .splitter-layout.layout-changing {
@@ -49,4 +50,10 @@
   width: 100%;
   height: 4px;
   cursor: row-resize;
+}
+
+.home-layout {
+  position: relative;
+  width: 100%;
+  height: 50%;
 }

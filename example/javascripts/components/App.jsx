@@ -5,14 +5,14 @@ import NavLink from './NavLink';
 function constructLinks() {
   return (
     <ul className="navigation">
+      <li><NavLink to="/sidebar">Sidebar</NavLink></li>
+      <li><NavLink to="/events">Events</NavLink></li>
+      <li><NavLink to="/iframe">iframe</NavLink></li>
       <li><NavLink to="/standard-horizontal">Horizontal</NavLink></li>
       <li><NavLink to="/standard-vertical">Vertical</NavLink></li>
       <li><NavLink to="/minimal-size">Pane Minimal Size</NavLink></li>
       <li><NavLink to="/percentage">Width in Percentage</NavLink></li>
       <li><NavLink to="/nested">Nested Layout</NavLink></li>
-      <li><NavLink to="/sidebar">Sidebar</NavLink></li>
-      <li><NavLink to="/events">Events</NavLink></li>
-      <li><NavLink to="/iframe">iframe</NavLink></li>
     </ul>
   );
 }
@@ -32,7 +32,6 @@ function App(props) {
           {props.children}
         </div>
       </div>
-      <footer>Licensed under MIT</footer>
     </div>
   );
 }
