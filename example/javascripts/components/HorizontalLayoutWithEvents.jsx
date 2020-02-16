@@ -2,7 +2,7 @@
 import React from 'react';
 import SplitterLayout from '../../../index';
 
-export default class HorizontalLayoutWithEvents extends React.Component {
+class HorizontalLayoutWithEvents extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,14 +12,6 @@ export default class HorizontalLayoutWithEvents extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.dragging !== this.state.dragging && this.draggingEl1 && this.draggingEl2) {
-      this.draggingEl1.classList.add('highlight');
-      this.draggingEl2.classList.add('highlight');
-      void this.draggingEl1.offsetWidth;
-      void this.draggingEl2.offsetWidth;
-      this.draggingEl1.classList.remove('highlight');
-      this.draggingEl2.classList.remove('highlight');
-    }
     if (prevState.secondaryPaneSize !== this.state.secondaryPaneSize && this.sizeEl1 && this.sizeEl2) {
       this.sizeEl1.classList.add('highlight');
       this.sizeEl2.classList.add('highlight');
@@ -28,10 +20,15 @@ export default class HorizontalLayoutWithEvents extends React.Component {
       this.sizeEl1.classList.remove('highlight');
       this.sizeEl2.classList.remove('highlight');
     }
-  }
 
-  onDragStart = () => {
-    this.setState({ dragging: true });
+    if (prevState.dragging !== this.state.dragging && this.draggingEl1 && this.draggingEl2) {
+      this.draggingEl1.classList.add('highlight');
+      this.draggingEl2.classList.add('highlight');
+      void this.draggingEl1.offsetWidth;
+      void this.draggingEl2.offsetWidth;
+      this.draggingEl1.classList.remove('highlight');
+      this.draggingEl2.classList.remove('highlight');
+    }
   }
 
   onDragEnd = () => {
@@ -40,6 +37,10 @@ export default class HorizontalLayoutWithEvents extends React.Component {
 
   onSecondaryPaneSizeChange = (secondaryPaneSize) => {
     this.setState({ secondaryPaneSize });
+  }
+
+  onDragStart = () => {
+    this.setState({ dragging: true });
   }
 
   render() {
@@ -64,13 +65,13 @@ export default class HorizontalLayoutWithEvents extends React.Component {
           <h2>1st Pane</h2>
         </div>
         <div className="my-pane">
-          <h2>2nd Pane</h2>
-          <p>This is the 2nd pane, and this is the secondary pane by default.</p>
           <p>Dragging:
             <span className="volatile" ref={(e) => { this.draggingEl2 = e; }}>
               {this.state.dragging ? 'Yes' : 'No'}
             </span>
           </p>
+          <h2>2nd Pane</h2>
+          <p>This is the 2nd pane, and this is the secondary pane by default.</p>
           <p>Size of this pane:
             <span className="volatile" ref={(e) => { this.sizeEl2 = e; }}>
               {this.state.secondaryPaneSize}
@@ -81,3 +82,5 @@ export default class HorizontalLayoutWithEvents extends React.Component {
     );
   }
 }
+
+export default HorizontalLayoutWithEvents;

@@ -16,6 +16,10 @@ document.simulateTouchEnd = () => {
   document.dispatchEvent(new TouchEvent('touchend'));
 };
 
+document.simulateTouchEnd = () => {
+  document.dispatchEvent(new TouchEvent('touchStart'));
+};
+
 document.simulateTouchMove = (clientX, clientY) => {
   document.dispatchEvent(new TouchEvent('touchmove', { changedTouches: [{ clientX, clientY }] }));
 };

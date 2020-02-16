@@ -17,8 +17,7 @@ import '../stylesheets/index.css';
 function NoMatch() {
   return (
     <div className="not-found">
-      <h2>Not Found</h2>
-      <p>Please one of links on the left.</p>
+      <div>Sorry, we couldn't find what you were looking for...</div>
     </div>
   );
 }

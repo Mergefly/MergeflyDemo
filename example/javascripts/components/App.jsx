@@ -20,10 +20,6 @@ function constructLinks() {
 function App(props) {
   return (
     <div>
-      <header>
-        <h1>React Splitter Layout</h1>
-        <p>A split layout for React and modern browsers.</p>
-      </header>
       <div className="main">
         <nav className="navigation-bar">
           {constructLinks()}
@@ -32,6 +28,10 @@ function App(props) {
           {props.children}
         </div>
       </div>
+      <header>
+        <h1>React Splitter Layout</h1>
+        <p>A split layout for React and modern browsers.</p>
+      </header>
     </div>
   );
 }
