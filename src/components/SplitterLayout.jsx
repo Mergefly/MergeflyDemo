@@ -4,8 +4,6 @@ import Pane from './Pane';
 
 function clearSelection() {
   if (document.body.createTextRange) {
-    // https://github.com/zesik/react-splitter-layout/issues/16
-    // https://stackoverflow.com/questions/22914075/#37580789
     const range = document.body.createTextRange();
     range.collapse();
     range.select();
@@ -20,7 +18,7 @@ function clearSelection() {
   }
 }
 
-const DEFAULT_SPLITTER_SIZE = 4;
+const DEFAULT_SPLITTER_SIZE = 6;
 
 class SplitterLayout extends React.Component {
   constructor(props) {
@@ -32,7 +30,8 @@ class SplitterLayout extends React.Component {
     this.handleSplitterMouseDown = this.handleSplitterMouseDown.bind(this);
     this.state = {
       secondaryPaneSize: 0,
-      resizing: false
+      resizing: false,
+      loading: true
     };
   }
 
