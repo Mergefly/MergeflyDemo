@@ -23,3 +23,5 @@ $ npm run coverage
 ## License
 
 [MIT](LICENSE)
+
+# ReadMe updates

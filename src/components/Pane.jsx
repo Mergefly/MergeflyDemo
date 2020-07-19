@@ -4,17 +4,21 @@ import PropTypes from 'prop-types';
 function Pane(props) {
   const style = {};
   const size = props.size || 0;
-  const unit = props.percentage ? '%' : 'px';
   let classes = 'layout-pane';
-  
+
   style.height = `${size}${unit}`;
   style.width = `${size}${unit}`;
+  unit = null;
   classes += ' layout-pane-primary';
 
   return (
     <div className={classes} style={style}>{props.children}</div>
   );
 }
+
+
+
+
 
 Pane.propTypes = {
   vertical: PropTypes.bool,
