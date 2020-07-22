@@ -1,10 +1,12 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 
 module.exports = {
-  mode: "production",
-  entry: ["./javascripts/index.jsx"],
+  mode: 'production',
+  entry: [
+    './javascripts/index.jsx'
+  ],
   resolve: {
-    extensions: [".js", ".jsx", ".css", ".scss"],
+    extensions: ['.js', '.jsx', '.css']
   },
   module: {
     rules: [
@@ -13,21 +15,26 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: ["@babel/env", "@babel/react"],
-            },
-          },
-        ],
-      },
-      {
+              presets: [
+                '@babel/env',
+                '@babel/react'
+              ]
+            }
+          }
+        ]
+      }, {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
-      },
-    ],
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
   },
   output: {
     path: __dirname,
-    filename: "bundle.js",
-  },
+    filename: 'bundle.js'
+  }
 };

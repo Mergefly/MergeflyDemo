@@ -1,4 +1,3 @@
-import SplitterLayout from "./src/components/SplitterLayout";
-import "antd/styles.css";
+import SplitterLayout from './src/components/SplitterLayout';
 
 export default SplitterLayout;
