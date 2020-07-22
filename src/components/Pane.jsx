@@ -9,7 +9,7 @@ function Pane(props) {
   style.height = `${size}${unit}`;
   style.width = `${size}${unit}`;
   unit = null;
-  classes += " layout-pane-primary";
+  classes += " layout-pane-primary layout-pane-stretch";
 
   return (
     <div className={classes} style={style}>
